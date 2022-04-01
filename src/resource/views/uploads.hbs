@@ -1,0 +1,58 @@
+<section class="upload-container">
+        <div class="drop-zone">
+            <div class="icon-container">
+                <img src="/image/file-icon.svg" class="left" alt="file-icon"draggable="false">
+                <img src="/image/file-icon.svg" class="center" alt="file-icon"draggable="false">
+                <img src="/image/file-icon.svg" class="right" alt="file-icon"draggable="false">
+            </div>
+            <input type="file" name="file" id="file-btn">
+            <div class="title">Drop your file here or,<span class="brower-btn">Browser</span> </div>
+        </div>
+           {{!-- Sharing container --}}
+        <div class="sharing-container">
+            <div class="progress-container">
+                <div class="bg-progress">
+                </div>
+                <div class="container-info-upload">
+                    <div class="text-loading"><p>Loading ...</p></div>
+                    <div class="percent-text"></div>
+                    <div class="percent-line"></div>
+                </div>
+            </div>
+
+            <div class="link-sharing-container">
+                <p>Link expired in 24 hrs</p>
+                <div class="link-input-container">
+                    <input class="link-input"  type="text" readonly="true">
+                </div>
+                <div class="copy-icon">
+                    <img src="/image/copy-icon.svg" class="copy-icon" >
+                </div>
+            </div>
+            {{!-- Email send container --}}
+            <div class="email-container">
+                <p>Or Send Via Email</p>
+                <div class="form-container">
+                    <form class="form-email" name="form-email">
+                        <div class="field">
+                            <label for="your-email">Your Email</label>
+                            <input type="email" required name="email-from" id="email-from" >
+                        </div>
+                        <div class="field">
+                            <label for="receiver-email">Receiver Email</label>
+                            <input type="email" required name="=email-to" id="email-to" >
+                        </div>
+                        <button id="btn-submit" type="submit"> Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+
+{{!-- div nền --}}
+<div class="backgroud-image">
+</div>
+
+{{!-- Toast Message --}}
+<div class="toast-message">
+</div>

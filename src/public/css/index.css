@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root {
+    --main-bg-color:#eff5fe;
+    --border-color:#75c6f147;
+    --container-width: 500px;
+}
+
+/* Respnsive */
+@media screen and (max-width: 900px) {
+    :root {
+        --container-width: 320px;
+    }
+    .backgroud-image {  
+        display: none;
+    }
+    .email-container .form-container .field {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+body,html {
+    font-family: "Poppins", sans-serif;
+    background: var(--main-bg-color);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body, .drop-zone, .upload-containe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body {
+    flex-direction: row;
+}
+
+.upload-container{
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 20px 20px #0000002e;
+}
+
+.drop-zone {
+    width: var(--container-width);
+    min-height: 200px;
+    border: 2px dashed var(--border-color);
+    margin: 30px;
+    border-radius: 10px;
+}
+.dragged.drop-zone {
+    background-color:var(--main-bg-color);
+    border-color: blue;
+    transition: all 0.3s ease;
+}
+
+.icon-container {
+    position: relative;
+    width: 75px;
+    height: 100px;
+}
+.icon-container img {
+    width:74px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: ease .3s;
+}
+.dragged .icon-container .center {
+    z-index: 2;
+    transform: translateY(-5px)
+}
+.dragged .icon-container .right, 
+.dragged .icon-container .left {
+    filter: grayscale(50%);
+}
+.dragged .icon-container .right {
+    transform: rotate(15deg) translateX(20px) scale(.9);
+}
+.dragged .icon-container .left {
+    transform: rotate(-15deg) translateX(-20px) scale(.9);
+}
+
+/* Phaan Btn */
+#file-btn {
+    display: none;
+}
+.drop-zone .brower-btn{
+    color: blue;
+    cursor: pointer;
+}
+
+
+.progress-container {
+    width: var(--container-width);
+    height:70px;
+    border: 1px solid var(--border-color);
+    margin: 30px;
+    margin-bottom: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+.progress-container .bg-progress{
+    width: 100%;
+    height: 100%;
+    background-color:var(--main-bg-color);
+    transform-origin: left;
+    transform: scaleX(0.0);
+    transition: width .25s linear;
+}
+
+.container-info-upload{
+    width: 100%;
+    position: absolute;
+    top: -15px;
+    top: 2px;
+    font-size: 15px;
+    margin: 5px 15px;
+}
+
+
+.text-loading p {
+    margin: 0;
+}
+
+.percent-line {
+    width: calc(100% - 30px);
+    height:5px;
+    background-color:blue;
+    transform-origin: left;
+    transform: scaleX(0)
+}
+
+
+.upload-container .sharing-container .link-sharing-container{
+    transition: ease 0.5s;
+}
+.link-sharing-container {
+    width: var(--container-width);
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 25px;
+    display: none;
+    margin: 30px;
+
+}
+.link-sharing-container p {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.link-sharing-container .link-input-container  input {
+    width: var(--container-width);
+    border: 2px dashed var(--border-color);
+    height: 22px;
+    border-radius: 6px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #0000008c;
+    outline: none;
+}
+.link-sharing-container .copy-icon {
+    position: absolute;
+    right: 3px;
+    top: 24px;
+    cursor: pointer;
+    width: 23px;
+    height: 24px;
+}
+.copy-icon img {
+    background: #f7fdff;
+}
+
+/* Css form email */
+.email-container {
+    display: none;
+}
+.email-container .form-container {
+    width: var(--container-width);
+    border: 2px  solid var(--border-color);
+    margin: 10px 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:  10px ;
+}
+.email-container .form-container .form-email {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-container .form-email button {
+    margin-top: 15px;
+    border: none;
+    padding: 10px 30px;
+    background-color: var(--main-bg-color);
+    border-radius: 6px;
+    font-weight: 600;
+    color: #0000008c;
+    cursor: pointer;
+}
+.email-container .form-container .field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.field input {
+    border: none;
+    border-bottom: 3px solid var(--border-color);
+    outline: none;
+}
+.email-container p{
+    display: block;
+    width: var(--container-width);
+    margin: 0px 30px;
+    text-align: center;
+}
+
+/* Toast Message */
+.toast-message {
+    position: absolute;
+    bottom:-50px;
+    padding: 10px 30px;
+    background-color: #03a9f4;
+    border-radius: 10px;
+    color: #ffff;
+    font-weight: 500;
+    font-size: 19px;
+    transition: ease 0.3s;
+}
+
+/* BackGroud IMAGE */
+.backgroud-image {
+    background: url('http://localhost:5000/image/backgroud.svg') no-repeat center;
+    background-size: contain; 
+    width: 50vw;
+    height: 50vh;   
+}   
+
+
+/* Trang downlaod Page */
+.download-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: var(--container-width);
+    background: #fff;
+    padding: 30px;
+    border-radius:10px;
+    box-shadow: 0 20px 20px #0000002e;
+}
+.download-container .image {
+    width: 200px;
+}
+.download-container .file-name {
+    font-size: 18px;
+    font-weight:500;
+    margin: 0 0;
+}
+.download-container .file-size {
+    margin-top: 3px;
+    font-size: 15px;
+}
+.download-container a {
+    text-decoration: none;
+    padding: 10px 30px;
+    margin-bottom: 0;
+    background: #03a9f4;
+    border-radius: 10px;
+    color: #fff;
+    font-size:19px;
+    box-shadow: 0 0 10px #03a9f4;
+}
+

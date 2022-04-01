@@ -1,0 +1,14 @@
+<div class="download-container">
+    <img src="/image/download.svg" alt="downloadimg">
+    {{#if uuid}}
+    <h3>Your file is ready to download</h3>
+    <p>Link expries in {{ttl}} hours</p>
+    <p class="file-name">{{fileName}}</p>
+    <p class="file-size">{{size}}kb</p>
+    <a href="{{linkDowload}}">Dowload file</a>
+    {{/if}}
+
+    {{#if error}}
+    <h3>{{error}}</h3>
+    {{/if}}
+</div>
