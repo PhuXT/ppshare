@@ -90,7 +90,7 @@ const showLinkDownload = function({file: link}) {
     // progressContainer.style.display = 'none'
     setTimeout(() =>{
         progressContainer.style.display = 'none'
-    }, 3000)
+    }, 1000)
     emailContainer.style.display = 'block'
 }
 
@@ -142,7 +142,7 @@ emailForm.addEventListener('submit', function(e) {
 })
 
 // show Toast Message
-const showToastMessage = function(message, time = 2000) {
+const showToastMessage = function(message, time = 4000) {
     toastMessage.innerText = message
     toastMessage.style.bottom = '10px'
     setTimeout( () => {
