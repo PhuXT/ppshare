@@ -18,7 +18,7 @@ const emailToInput = document.querySelector("#email-to")
 const sharingContainer = document.querySelector('.sharing-container')
 const toastMessage = document.querySelector('.toast-message')
 
-const uploadURL = 'http://localhost:5000/files/uploads'
+const uploadURL = 'https://ppshare.herokuapp.com/files/uploads'
 
 
 dropZone.addEventListener('dragover', function(e) {
@@ -118,7 +118,7 @@ emailForm.addEventListener('submit', function(e) {
         emailTo,
     }
     // gui request len server 
-    const emailURL = 'http://localhost:5000/files/sends'
+    const emailURL = 'https://ppshare.herokuapp.com/files/sends'
     fetch(emailURL, {
         method: 'POST',
         headers: {
