@@ -4,7 +4,8 @@ function senEmail({from, to, subject, text, html}){
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true,
+        secureConnection: false,
+        // secure: true,
         auth: {
             user: 'phamphuw01@gmail.com', 
             pass: 'Phamvanphu01051975' 
@@ -24,7 +25,6 @@ function senEmail({from, to, subject, text, html}){
     transporter.sendMail(mainOptions, function(err, info){
         if (err) {
             console.log('Erro Send Mail: '+err);
-            res.redirect('/');
         } else {
             console.log('Message sent: ' +  info.response);
         }
